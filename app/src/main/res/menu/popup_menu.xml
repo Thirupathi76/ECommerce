@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/filter_near"
+        android:title="Near by" />
+    <item android:id="@+id/filter_low"
+        android:title="Low to high" />
+    <item android:id="@+id/filter_high"
+        android:title="High to low" />
+
+    <item android:id="@+id/filter_rate"
+        android:title="Top rated" />
+
+
+</menu>
