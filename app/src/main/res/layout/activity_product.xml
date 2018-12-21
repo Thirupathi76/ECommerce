@@ -1,92 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary">
-
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary">
-
-                <EditText
-                    android:id="@+id/search_medicines"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/round_corners_background"
-                    android:gravity="center_vertical"
-                    android:hint="Search medicines online"
-                    android:paddingLeft="8dp"
-                    android:textColor="@color/black" />
-            </LinearLayout>-->
-        </android.support.v7.widget.Toolbar>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:id="@+id/search_products"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/round_corners_background"
-            android:gravity="center_vertical"
-            android:padding="4dp"
-            android:textSize="14sp"
-            android:hint="  Search for the Products"
-            android:textColor="@color/black"/>
-    </android.support.design.widget.AppBarLayout>
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/icons">
 
     <LinearLayout
-        android:id="@+id/bottom_cart_layout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="8dp"
-        android:background="#006efd"
-        android:visibility="gone">
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/cart_text"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Apply"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/_8sdp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/product_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_48sdp"
+                    android:text="@string/product_size"
+                    android:textColor="@color/colorAccent"/>
+
+                <TextView
+                    android:id="@+id/product_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:text="@string/product_color"
+                    android:textColor="@color/colorAccent"/>
+
+                <TextView
+                    android:id="@+id/product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:text="@string/product_price"
+                    android:textColor="@color/colorAccent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/full_product_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/android_pay"
+                    android:src="@drawable/productonebig"
+                    android:scaleType="centerCrop"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_cart_layout"
-        android:layout_below="@+id/appBar">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="bottom"
+        android:paddingBottom="@dimen/_16sdp"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/product_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/colorPrimaryText"
+            android:text="@string/description_example"
+            android:textSize="@dimen/_12sdp"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp" />
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/icons"
+            android:text="@string/add_to_cart"
+            android:textSize="@dimen/_16sdp"
+            android:padding="@dimen/_16sdp"/>
 
+    </LinearLayout>
 
-    </RelativeLayout>
-
-
-</RelativeLayout>
+</LinearLayout>

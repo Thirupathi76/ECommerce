@@ -15,7 +15,7 @@ public class PaymentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.activity_sample_payment);
 
         ((TextView)findViewById(R.id.text_payment)).setText(getIntent().getStringExtra("CART"));
         ArrayList<String> prod_list = new ArrayList<>();
